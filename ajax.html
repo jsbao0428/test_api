@@ -22,7 +22,6 @@
 				fetch mdn
 		*/
 		// 透過網址取得伺服器端提供的 JSON 格式資料
-        let json_data;
 		fetch("http://35.187.242.62:7777/items").then(function(response){
 			return response.json();
 		}).then(function(data){
@@ -30,8 +29,7 @@
 			list.innerHTML="";
 			// 根據取得的資料，將產品的訊息顯示出來
 	
-			json_data = data;
-            console.log(json_data)
+			list.innerHTML+=data.shopee.bold()+" - "+data.momo+"<br/>"+data.pc24h+"<hr/>";
 			
 		});
 	</script>
